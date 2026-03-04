@@ -47,4 +47,17 @@ public class Book {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || !getClass().isAssignableFrom(obj.getClass())) {
+            return false;
+        }
+        if (obj == this) {
+            return true;
+        }
+
+        Book other = (Book) obj;
+        return getId() != null && getId().equals(other.getId());
+    }
 }
